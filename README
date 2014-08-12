@@ -1,0 +1,32 @@
+The Following are classes used to Solve and return a Sudoku Puzzle written in Objective-C
+
+Instructions:
+Add all three classes (6 files) to your project
+
+1). Your Input Class, needs to include the SuCanDoSolver.h and SuCanDoResultObject.h files
+
+2). Make a SuCanDoSolver Object and pass the ‘solve’ message to it with the argument being the unsolved Sudoku puzzle as a 2 dimensional array. The cell value type is NSNumber *. And all the empty cells need to initialised to NSNumber intValue=0;
+
+
+3). The return value will be either nil if the puzzle was incorrect(unsolvable) or a SuCanDoResultObject if it was solved.
+
+The Code might look like this:
+
+	SuCanDoSolver * obj=[[SuCanDoSolver alloc] init];
+	SuCanDoResultObject *result=[obj solve:array];
+	//array is your input Sudoku puzzle as described earlier
+	
+4). SuCanDoResultObject has 4 properties
+
+	a) NSString *Title set by default to the [[NSDate date] Description]];
+
+	b) NSMutableArray * Puzzle a 9x9 solved sudoku puzzle, with the cells have NSNumber objects, with their intValue set as the answer
+
+	c) NSMutableArray *State, a 9x9 array that can be used to preserve the state of 
+the puzzle if a user is solving it.
+	
+	d) typedef enum Level, that is set to easy if the Solver needed to make no guesses, medium if one guess and hard if more than 1 guess was needed to solve the puzzle.
+
+The SuCanDoResultObject conforms to the NSCoding Protocol and ready to be archieved. 
+
+Note: Please go thought the code, the comments should be useful in providing an complete understanding.
